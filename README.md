@@ -4,10 +4,16 @@ With minimal amount of configuration, you can make your CSS/JavaScript (Less, Co
 
 ## Getting started
 
-Install using npm (add sudo and -g if you want to install it globally).
+Install using npm in the current directory:
 
 ```bash
 npm install webdevwatcher
+```
+
+Or install globally:
+
+```bash
+sudo npm install -g webdevwatcher
 ```
 
 Create your configuration file, which is also the main entry point to the code.
@@ -41,7 +47,7 @@ wdw.watch.throttled(/(\.py|\.html|\.js)$/, function(done) {
 wdw.server.start(8000);
 // Start watching the filesystem
 wdw.watch.start(__dirname);
-// Start websocket server on 50002 for borwser commands
+// Start websocket server on 50002 for browser commands
 wdw.browser.start(50002);
 ```
 
@@ -51,7 +57,7 @@ Now just run your code with the following command:
 node myfile.js
 ```
 
-That's it. Navigate your browser to localhost:8000 and it should proxy you to localhost:50001 (you can change that in the code). In addition to that, it will automatically reload your borwser for .py, .html and .js changes and reload css for css changes. But this is just the start.
+That's it. Navigate your browser to localhost:8000 and it should proxy you to localhost:50001 (you can change that in the code). In addition to that, it will automatically reload your browser for .py, .html and .js changes and reload css for .css changes. But this is just the start.
 
 ## How does it work?
 

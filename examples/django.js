@@ -41,5 +41,5 @@ wdw.watch.throttled(/(\.py|\.html)$/, function(done) {
 wdw.server.start(8000);
 // Start watching the filesystem
 wdw.watch.start(__dirname);
-// Start websocket server on 50002 for borwser commands
+// Start websocket server on 50002 for browser commands
 wdw.browser.start(50002);
