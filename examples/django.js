@@ -14,7 +14,7 @@ wdw.server.route(/^\/static\//, wdw.static.serve(__dirname));
 wdw.server.route(wdw.proxy.create('localhost', 50001));
 
 // Any css in static subfolders
-wdw.watch.throttled(/^media\/.*\/.*\.css$/, function(done) {
+wdw.watch.throttled(/^static\/.*\/.*\.css$/, function(done) {
 	// Custom CSS compiling script, you can do anything here
 	cp.exec('./manage.py compile none', function() {
 		console.log('CSS updated');
