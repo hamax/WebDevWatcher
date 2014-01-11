@@ -1,0 +1,26 @@
+<script>
+	(function() {
+		var socket = new WebSocket('ws://' + window.location.hostname + ':%(port)'); 
+
+		socket.onmessage = function(ev) {
+			if (ev.data == 'reload') {
+				window.location.reload();
+			}
+			if (ev.data == 'reload_css') {
+				var links = document.getElementsByTagName("link");
+				for (var i = 0; i < links.length; i++) {
+					if (links[i].rel === "stylesheet") {
+						links[i].href = links[i].href;
+					}
+				}
+			}
+		};
+
+		socket.onclose = function() {
+			var msg = document.createElement('div');
+			msg.innerText = 'Connection lost!';
+			msg.setAttribute('style', 'position: fixed; top: 50%; left: 50%; background-color: red; font-size: 30px; padding: 5px; margin-left: -114px; margin-top: -23px;');
+			document.getElementsByTagName('body')[0].appendChild(msg);
+		};
+	})();
+</script>

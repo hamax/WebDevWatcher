@@ -1,0 +1,22 @@
+{
+	"name": "webdevwatcher",
+	"description": "Automatically reload your browser as you make changes and more.",
+	"version": "1.0.0",
+	"homepage": "http://github.com/hamax/webdevwatcher",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/hamax/webdevwatcher.git"
+	},
+	"author": {
+		"name": "Ziga Ham",
+		"email": "ziga@hamsworld.net",
+		"url": "http://zigaham.com/"
+	},
+	"license": "Apache-2.0",
+	"main": "webdevwatcher.js",
+	"dependencies": {
+		"chokidar": "~0.8.x",
+		"ws": "~0.4.x",
+		"mime": "~1.2.x"
+	}
+}
